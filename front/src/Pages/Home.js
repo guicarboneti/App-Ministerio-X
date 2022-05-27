@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -6,6 +7,8 @@ import Grid from '@mui/material/Grid';
 import EmployeeCard from '../Components/EmployeeCard';
 import EmployeeList from '../Components/EmployeeList';
 import { blue } from '@mui/material/colors';
+import api from './../api.js';
+import { Button } from '@mui/material';
 // import axios from 'axios'
 
 function Home(props) {
@@ -14,17 +17,17 @@ function Home(props) {
 	// 	headers: {'Access-Control-Allow-Origin':'*'}
 	// });
 
-    const buildCards = () => {
-        const result = [];
-        for (let i=0;i<4;i++) {
-            result.push(
-				<Grid item xs={6}>
-					<EmployeeCard cardnumber={i.toString()}/>
-				</Grid>
-			);
-        }
-        return result
-    }
+    // const buildCards = () => {
+    //     const result = [];
+    //     for (let i=0;i<4;i++) {
+    //         result.push(
+	// 			<Grid item xs={6}>
+	// 				<EmployeeCard cardnumber={i.toString()}/>
+	// 			</Grid>
+	// 		);
+    //     }
+    //     return result
+    // }
 
 	// const getData = () => {
 	// 	// Make a request for a user with a given ID
@@ -49,7 +52,7 @@ function Home(props) {
 				<h2>Índice de Servidores Públicos do Ministério X</h2>
 				<Grid container spacing={1}>
 					{/* {buildCards()} */}
-					<EmployeeList list={props.listFetch}/>
+					<EmployeeList employees={props.employees}/>
 					{/* {getData()} */}
 					{/* <Grid item xs={8}>
 						<EmployeeCard cardnumber={'5'}/>

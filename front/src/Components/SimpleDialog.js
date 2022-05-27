@@ -29,7 +29,7 @@ export default function SimpleDialog(props) {
             <Box sx={{ flexGrow: 1, marginLeft: 2 }} style={{marginBottom:"16px"}}>
 				<Grid container spacing={1}>
                     <Grid item xs={1} style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-                        <Avatar alt={props.item.name} src={`https://www.inf.ufpr.br/hvehrenfried/Treinamento/Dados/photo/${props.item['photo file']}`} />
+                        <Avatar alt={props.item.name} src={`https://www.inf.ufpr.br/hvehrenfried/Treinamento/Dados/photo/${props.item['photo']}`} />
                     </Grid>
                     <Grid item xs={11} style={{display:"flex", alignItems:"center"}}>
                         <span>{props.item.name + " " + props.item.surname}</span>
@@ -56,10 +56,10 @@ export default function SimpleDialog(props) {
                         <WorkIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={11} style={{display:"flex", alignItems:"center"}}>
-                        <span>{props.item['job position']}</span>
+                        <span>{props.item['job']}</span>
                     </Grid>
 				</Grid>
-                <EmployeeSchedule />
+                <EmployeeSchedule schedule={props.item.schedule} />
 			</Box>
         </Dialog>
     );

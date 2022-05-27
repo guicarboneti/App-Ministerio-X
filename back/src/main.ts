@@ -22,5 +22,5 @@ app.put('/schedule/:id', ScheduleController.scheduleUpdate);
 app.delete('/schedule/:id', ScheduleController.scheduleRemove);
 app.get('/schedule', ScheduleController.scheduleGet);
 
-app.listen(3000);
-console.log("Server listening on port 3000");
+app.listen(3001);
+console.log("Server listening on port 3001");

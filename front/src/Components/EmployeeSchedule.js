@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
+import { styled } from '@mui/material/styles';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { capitalize } from '@mui/material';
 
 function createData(name, calories, fat, carbs, protein) {
 return { name, calories, fat, carbs, protein };
@@ -19,36 +21,93 @@ createData('Cupcake', 305, 3.7, 67, 4.3),
 createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function DenseTable() {
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+        // backgroundColor: theme.palette.common.black,
+        // color: theme.palette.common.white,
+        border: "1px solid gray",
+    },
+    [`&.${tableCellClasses.body}`]: {
+        fontSize: 14,
+    },
+}));
+
+export default function EmployeeSchedule(props) {
 return (
+    <div>
+    <ul>
+    {props.schedule.mon.map(item => (
+    	// <p>{item['09h'].duration}</p>
+        <p>{Object.keys(item)[0]}</p>
+    ))}
+    </ul>
+    {/* <h1>{props.schedule.mon[0]['11h00']['duration']}</h1> */}
     <TableContainer component={Paper}>
-    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-        <TableHead>
-        <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-        </TableRow>
-        </TableHead>
-        <TableBody>
-        {rows.map((row) => (
-            <TableRow
-            key={row.name}
-            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-            <TableCell component="th" scope="row">
-                {row.name}
-            </TableCell>
-            <TableCell align="right">{row.calories}</TableCell>
-            <TableCell align="right">{row.fat}</TableCell>
-            <TableCell align="right">{row.carbs}</TableCell>
-            <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-        ))}
-        </TableBody>
-    </Table>
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+            <TableHead>
+                <TableRow>
+                    <StyledTableCell align="center" colSpan={3}>Monday</StyledTableCell>
+                    <StyledTableCell align="center" colSpan={3}>Tuesday</StyledTableCell>
+                    <StyledTableCell align="center" colSpan={3}>Wednesday</StyledTableCell>
+                    <StyledTableCell align="center" colSpan={3}>Thursday</StyledTableCell>
+                    <StyledTableCell align="center" colSpan={3}>Friday</StyledTableCell>
+                </TableRow>
+                <TableRow>
+                    <StyledTableCell align="center">Time</StyledTableCell>
+                    <StyledTableCell align="center">Description</StyledTableCell>
+                    <StyledTableCell align="center">Duration</StyledTableCell>
+                    <StyledTableCell align="center">Time</StyledTableCell>
+                    <StyledTableCell align="center">Description</StyledTableCell>
+                    <StyledTableCell align="center">Duration</StyledTableCell>
+                    <StyledTableCell align="center">Time</StyledTableCell>
+                    <StyledTableCell align="center">Description</StyledTableCell>
+                    <StyledTableCell align="center">Duration</StyledTableCell>
+                    <StyledTableCell align="center">Time</StyledTableCell>
+                    <StyledTableCell align="center">Description</StyledTableCell>
+                    <StyledTableCell align="center">Duration</StyledTableCell>
+                    <StyledTableCell align="center">Time</StyledTableCell>
+                    <StyledTableCell align="center">Description</StyledTableCell>
+                    <StyledTableCell align="center">Duration</StyledTableCell>
+                </TableRow>
+            </TableHead>
+            {/* <TableBody>
+                {rows.map((row) => (
+                    <TableRow
+                    key={row.name}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                    <StyledTableCell component="th" scope="row" align="center">{row.name}</StyledTableCell>
+                    <StyledTableCell align="center">{row.calories}</StyledTableCell>
+                    <StyledTableCell align="center">{row.fat}</StyledTableCell>
+                    <StyledTableCell align="center">{row.carbs}</StyledTableCell>
+                    <StyledTableCell align="center">{row.protein}</StyledTableCell>
+                    </TableRow>
+                ))}
+            </TableBody> */}
+            <TableBody>
+                {props.schedule.mon.forEach((item) => {
+                    <StyledTableCell component="th" scope="row" align="center">{console.log(item)}</StyledTableCell>
+                    // Object.values(item).map((clk, clkId) => (
+                    //     <StyledTableCell component="th" scope="row" align="center">{clk}</StyledTableCell>
+                    //     // console.log(clkId)
+                    // ))
+                    // <StyledTableCell component="th" scope="row" align="center">{Object.keys(item)[0]}</StyledTableCell>
+                    // item.map((clk) => (
+                    //     <TableRow
+                    //     // key={Object.keys(item[0])[0]}
+                    //     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    //     >
+                    //         <StyledTableCell component="th" scope="row" align="center">{Object.keys(clk)[0]}</StyledTableCell>
+                    //         {/* <StyledTableCell align="center">{row.calories}</StyledTableCell>
+                    //         <StyledTableCell align="center">{row.fat}</StyledTableCell>
+                    //         <StyledTableCell align="center">{row.carbs}</StyledTableCell>
+                    //         <StyledTableCell align="center">{row.protein}</StyledTableCell> */}
+                    //     </TableRow>
+                    // ))
+                })}
+            </TableBody>
+        </Table>
     </TableContainer>
+    </div>
 );
 }

@@ -30,13 +30,13 @@ export default function EmployeeList(props) {
     return (
         <div>
             <List sx={{ width: '100%', maxWidth: 360 }}>
-                {props.list.map((item) => (
+                {props.employees.map((item) => (
                     <div>
                         <ListItem button alignItems="flex-start" onClick={() => {
                             handleClickOpen(item);
                         }}>
                             <ListItemAvatar>
-                                <Avatar alt={item.name} src={`https://www.inf.ufpr.br/hvehrenfried/Treinamento/Dados/photo/${item['photo file']}`} />
+                                <Avatar alt={item.name} src={`https://www.inf.ufpr.br/hvehrenfried/Treinamento/Dados/photo/${item['photo']}`} />
                             </ListItemAvatar>
                             <ListItemText style={{marginTop:"15px"}} primary={item.name + " " + item.surname} />
                         </ListItem>
