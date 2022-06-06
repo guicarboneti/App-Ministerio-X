@@ -1,15 +1,7 @@
 import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import PropTypes from 'prop-types';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import PersonIcon from '@mui/icons-material/Person';
-import AddIcon from '@mui/icons-material/Add';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -29,7 +21,7 @@ export default function SimpleDialog(props) {
             <Box sx={{ flexGrow: 1, marginLeft: 2 }} style={{marginBottom:"16px"}}>
 				<Grid container spacing={1}>
                     <Grid item xs={1} style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-                        <Avatar alt={props.item.name} src={`https://www.inf.ufpr.br/hvehrenfried/Treinamento/Dados/photo/${props.item['photo']}`} />
+                        <Avatar style={{ border: "solid black 2px" }} alt={props.item.name} src={`https://www.inf.ufpr.br/hvehrenfried/Treinamento/Dados/photo/${props.item['photo']}`} />
                     </Grid>
                     <Grid item xs={11} style={{display:"flex", alignItems:"center"}}>
                         <span>{props.item.name + " " + props.item.surname}</span>
@@ -59,7 +51,7 @@ export default function SimpleDialog(props) {
                         <span>{props.item['job']}</span>
                     </Grid>
 				</Grid>
-                <EmployeeSchedule schedule={props.item.schedule} />
+                <EmployeeSchedule style={{margin: "50px"}} schedule={props.item.schedule} />
 			</Box>
         </Dialog>
     );
