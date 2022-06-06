@@ -9,7 +9,7 @@ import EmployeeList from '../Components/EmployeeList';
 import { blue } from '@mui/material/colors';
 import api from './../api.js';
 import { Button } from '@mui/material';
-// import axios from 'axios'
+import Typography from '@mui/material/Typography';// import axios from 'axios'
 
 function Home(props) {
 	// const api = axios.create({
@@ -49,7 +49,9 @@ function Home(props) {
 	return (
 		<div className="Home" style={{ margin:"20px" }}>
 			<Box sx={{ flexGrow: 1 }}>
-				<h2>Índice de Servidores Públicos do Ministério X</h2>
+				<Typography gutterBottom variant="h5" component="div">
+					Índice de Servidores Públicos do Ministério X
+				</Typography>
 				<Grid container spacing={1}>
 					{/* {buildCards()} */}
 					<EmployeeList employees={props.employees}/>
