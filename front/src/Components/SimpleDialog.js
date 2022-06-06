@@ -59,7 +59,7 @@ export default function SimpleDialog(props) {
                         <span>{props.item['job']}</span>
                     </Grid>
 				</Grid>
-                <EmployeeSchedule schedule={props.item.schedule} />
+                <EmployeeSchedule style={{margin: "50px"}} schedule={props.item.schedule} />
 			</Box>
         </Dialog>
     );
