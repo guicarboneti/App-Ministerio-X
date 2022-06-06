@@ -9,6 +9,7 @@ import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import EmailIcon from '@mui/icons-material/Email';
 import WorkIcon from '@mui/icons-material/Work';
 import EmployeeSchedule from '../Components/EmployeeSchedule'
+import StarIcon from '@mui/icons-material/Star';
 
 export default function SimpleDialog(props) {
     const handleClose = () => {
