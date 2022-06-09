@@ -1,0 +1,21 @@
+@media screen and (max-width: 550px){
+    span {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 410px){
+    svg {
+        margin-left: 16px;
+    }
+    .css-1wlk0hk-MuiAvatar-root {
+        margin-left: 16px;
+    }
+    span {
+        margin-left: 18px;
+        font-size: 14px;
+    }
+    .css-bapq3l {
+        margin-left: 10px;
+    }
+}
