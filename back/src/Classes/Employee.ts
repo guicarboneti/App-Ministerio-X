@@ -10,9 +10,9 @@ export interface EmployeeInfo {
     email: string;
     job: string;
     extension: string;
-    begin_work: string[];
-    finish_work: string[];
     schedule: Schedule[];
+    begin: any[];
+    finish: any[];
 }
 
 export class Employee {
@@ -25,9 +25,9 @@ export class Employee {
     public readonly email: string;
     public readonly job: string;
     public readonly extension: string;
-    public readonly begin_work: string[];
-    public readonly finish_work: string[];
     public readonly schedule: Schedule[];
+    public readonly begin: any[];
+    public readonly finish: any[];
 
     constructor(ei: EmployeeInfo, id: number) {
         this.id = id;
@@ -38,9 +38,9 @@ export class Employee {
         this.email = ei.email;
         this.job = ei.job;
         this.extension = ei.extension;
-        this.begin_work = ei.begin_work;
-        this.finish_work = ei.finish_work;
         this.schedule = ei.schedule;
+        this.begin = ei.begin;
+        this.finish = ei.finish;
     }
 }
 

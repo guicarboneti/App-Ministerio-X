@@ -47,9 +47,9 @@ export class ErrorHandler {
             email: input.email,
             extension: input.extension,
             job: input.job,
-            begin_work: input.begin_work,
-            finish_work: input.finish_work,
-            schedule: input.schedule
+            schedule: input.schedule,
+            begin: input.begin,
+            finish: input.finish
         }
 
         isUpdate = false;

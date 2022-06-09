@@ -6,7 +6,6 @@ import TableContainer from '@mui/material/TableContainer';
 import { styled } from '@mui/material/styles';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import '../CSS/EmployeeSchedule.css';
 
 function getNumberRows(obj) {
@@ -43,7 +42,7 @@ function loopDay(obj, i) {
 
     week.forEach(function(day) {
         if (obj[day]!=null && Object.values(obj[day][0])[i]!=null) {
-                html.push (
+            html.push (
                 getTime_i(obj, day, i)
             )
         }
@@ -77,48 +76,46 @@ function loopRow(obj) {
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: theme.palette.common.black,
         color: theme.palette.common.white,
         fontSize: 14,
-        padding: 5,
+        padding: 4,
     },
     [`&.${tableCellClasses.body}`]: {
         backgroundColor: theme.palette.grey['300'],
-        fontSize: 12,
+        fontSize: 13,
     },
-    padding: 5,
+    padding: 0,
     border: "1px solid gray",
 }));
 
 export default function EmployeeSchedule(props) {
     return (
-        <div>
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableContainer>
+            <Table sx={{ maxWidth: 570, minWidth: 500 }}>
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell align="center" colSpan={3}>Monday</StyledTableCell>
-                        <StyledTableCell align="center" colSpan={3}>Tuesday</StyledTableCell>
-                        <StyledTableCell align="center" colSpan={3}>Wednesday</StyledTableCell>
-                        <StyledTableCell align="center" colSpan={3}>Thursday</StyledTableCell>
-                        <StyledTableCell align="center" colSpan={3}>Friday</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "rgb(0,0,50)" }} align="center" colSpan={3}>Segunda</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "rgb(0,0,50)" }} align="center" colSpan={3}>Terça</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "rgb(0,0,50)" }} align="center" colSpan={3}>Quarta</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "rgb(0,0,50)" }} align="center" colSpan={3}>Quinta</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "rgb(0,0,50)" }} align="center" colSpan={3}>Sexta</StyledTableCell>
                     </TableRow>
                     <TableRow>
-                        <StyledTableCell align="center">Time</StyledTableCell>
-                        <StyledTableCell align="center">Description</StyledTableCell>
-                        <StyledTableCell align="center">Duration</StyledTableCell>
-                        <StyledTableCell align="center">Time</StyledTableCell>
-                        <StyledTableCell align="center">Description</StyledTableCell>
-                        <StyledTableCell align="center">Duration</StyledTableCell>
-                        <StyledTableCell align="center">Time</StyledTableCell>
-                        <StyledTableCell align="center">Description</StyledTableCell>
-                        <StyledTableCell align="center">Duration</StyledTableCell>
-                        <StyledTableCell align="center">Time</StyledTableCell>
-                        <StyledTableCell align="center">Description</StyledTableCell>
-                        <StyledTableCell align="center">Duration</StyledTableCell>
-                        <StyledTableCell align="center">Time</StyledTableCell>
-                        <StyledTableCell align="center">Description</StyledTableCell>
-                        <StyledTableCell align="center">Duration</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Hora</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Descrição</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Duração</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Hora</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Descrição</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Duração</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Hora</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Descrição</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Duração</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Hora</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Descrição</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Duração</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Hora</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Descrição</StyledTableCell>
+                        <StyledTableCell style={{ backgroundColor: "#09084c" }} align="center">Duração</StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -126,6 +123,5 @@ export default function EmployeeSchedule(props) {
                 </TableBody>
             </Table>
         </TableContainer>
-        </div>
     );
 }

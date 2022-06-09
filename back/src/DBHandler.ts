@@ -34,19 +34,16 @@ export class DBHandler {
             email: "sid@ema.com",
             job: "dono das prateleiras Sid",
             extension: "123",
-            begin_work: [],
-            finish_work: [],
             schedule: [defaultSchedule],
+            begin: [{"mon": "07h57", "tue": "07h36", "wed": "08h02", "thu": "07h59", "fri": "08h00"}],
+            finish: [{"mon": "18h30", "tue": "18h00", "wed": "18h03", "thu": "18h02", "fri": "17h55"}]
         }, this.employeesID++);
 
         this.employees.push(defaultEmployee);
-
-
         this.schedules.push(defaultSchedule);
     }
 
     findElement(elemId: number, array: any[]): any {
-
         return array.find(target => target.id == elemId);
     }
 
@@ -96,7 +93,7 @@ export class DBHandler {
 
         this.employees.splice(index, 1);
 
-        const scheduleElem = this.findElement(elem.schedule, this.schedules);
+        const scheduleElem = this.schedules.find(target => target.employee == elem.id);
         const scheduleIndex = this.schedules.indexOf(scheduleElem);
         this.schedules.splice(scheduleIndex, 1);
     }
